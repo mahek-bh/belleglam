@@ -1,0 +1,470 @@
+/* ================================== */
+/* ==     1. CSS Variables         == */
+/* ================================== */
+:root {
+  /* Color Palette from image */
+  --color-primary-light: #f7f2f2;
+  /* Lightest Pink Background */
+  --color-primary-dusty: #d1a3a4;
+  /* Hero Background Pink */
+  --color-accent-maroon: #a14e59;
+  /* Hero Button */
+  --color-accent-light: #e6c2c3;
+  /* Cart Button Border */
+  --color-accent-light-text: #a14e59;
+  /* Cart Button Text */
+  --color-dark: #222222;
+  --color-text: #333333;
+  --color-white: #ffffff;
+  --color-border: #eee;
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* Transitions & Shadows */
+  --transition: all 0.3s ease-in-out;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================== */
+/* ==     2. Global Styles         == */
+/* ================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-primary-light);
+  /* Light bg for this page */
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent-maroon);
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit {
+  background-color: var(--color-accent-maroon);
+  color: var(--color-white);
+  border: 2px solid var(--color-accent-maroon);
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: transparent;
+  color: var(--color-accent-maroon);
+}
+
+/* ================================== */
+/* ==    3. Header & Navigation    == */
+/* ================================== */
+/* (This CSS is identical to index.html for consistency) */
+.header {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-icons .icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  fill: var(--color-dark);
+}
+
+.nav-toggle {
+  display: none;
+  /* Hidden on desktop */
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--color-dark);
+  z-index: 1001;
+}
+
+/* ================================== */
+/* ==    4. Page Header (Contact)  == */
+/* ================================== */
+.page-header {
+  background-color: var(--color-white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* ================================== */
+/* ==    5. Contact Page Content   == */
+/* ================================== */
+.contact-section {
+  padding: 4rem 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+}
+
+.contact-layout h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Contact Form --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-maroon);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* --- Contact Info --- */
+.contact-info-list {
+  list-style: none;
+}
+
+.contact-info-list li {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.contact-info-list .icon-bg {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  color: var(--color-accent-maroon);
+}
+
+.contact-info-list h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-list p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.map-container {
+  width: 100%;
+  height: 250px;
+  background-color: var(--color-border);
+  border-radius: 8px;
+  margin-top: 2rem;
+  display: grid;
+  place-items: center;
+  color: #888;
+  font-family: var(--font-heading);
+}
+
+/* ================================== */
+/* ==        6. Footer             == */
+/* ================================== */
+/* (This CSS is identical to index.html for consistency) */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 4rem 0 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.footer-col p,
+.footer-col a {
+  color: #ccc;
+  line-height: 2;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-dusty);
+  display: grid;
+  place-items: center;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* ================================== */
+/* ==   7. Scroll Animations       == */
+/* ================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================== */
+/* ==   8. Responsive Design       == */
+/* ================================== */
+/* (This CSS is identical to index.html for consistency) */
+
+/* --- Tablet (Medium Devices) --- */
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    /* Stack form on tablet */
+  }
+}
+
+/* --- Mobile (Small Devices) --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* --- Mobile Navigation --- */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  .nav-icons {
+    gap: 1rem;
+  }
+
+  .nav-icons .icon {
+    display: none;
+    /* Hide desktop icons */
+  }
+
+  /* --- Contact Page Mobile --- */
+  .contact-layout {
+    padding: 1.5rem;
+  }
+
+  .contact-layout h2 {
+    text-align: center;
+  }
+
+
+  /* --- Footer Mobile --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Small Mobile --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .contact-layout {
+    padding: 1.5rem 1rem;
+  }
+}
